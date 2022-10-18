@@ -2,7 +2,9 @@
     "require": {
         "symfony/dependency-injection": "^6.1",
         "symplify/symplify-kernel": "^11.1",
-        "symfony/console": "^6.1"
+        "symfony/console": "^6.1",
+        "symfony/dotenv": "^6.1",
+        "symfony/runtime": "^6.1"
     },
     "autoload": {
         "psr-4": {
@@ -14,7 +16,8 @@
     },
     "config": {
         "allow-plugins": {
-            "dealerdirect/phpcodesniffer-composer-installer": true
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "symfony/runtime": true
         }
     }
 }

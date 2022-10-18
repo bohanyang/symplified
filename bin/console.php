@@ -2,13 +2,8 @@
 
 declare(strict_types=1);
 
-namespace App;
+if (! is_file(dirname(__DIR__) . '/vendor/autoload_runtime.php')) {
+    throw new LogicException('Symfony Runtime is missing. Try running "composer require symfony/runtime".');
+}
 
-use Symplify\SymplifyKernel\ValueObject\KernelBootAndApplicationRun;
-
-use function dirname;
-
-require dirname(__DIR__) . '/vendor/autoload.php';
-
-$kernelBootAndApplicationRun = new KernelBootAndApplicationRun(Kernel::class);
-$kernelBootAndApplicationRun->run();
+require_once dirname(__DIR__) . '/vendor/autoload_runtime.php';
