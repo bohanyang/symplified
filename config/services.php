@@ -10,9 +10,6 @@ use Symfony\Component\Console\Application as ConsoleApplication;
 use Symfony\Component\Console\Command\Command;
 
 return static function (ContainerConfigurator $containerConfigurator): void {
-    $parameters = $containerConfigurator->parameters();
-    $parameters->set('calculator.overflow', 10);
-
     $services = $containerConfigurator->services();
     $services
         ->defaults()
@@ -32,5 +29,5 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $services->alias(ConsoleApplication::class, Application::class);
 
     $services->set(Calculator::class)
-        ->arg('$overflow', param('calculator.overflow'));
+        ->arg('$overflow', env('OVERFLOW')->int());
 };

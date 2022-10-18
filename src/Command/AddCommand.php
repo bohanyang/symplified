@@ -14,7 +14,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 #[AsCommand(
     name: 'app:add',
 )]
-class AddCommand extends Command
+final class AddCommand extends Command
 {
     public function __construct(
         private Calculator $calculator,
