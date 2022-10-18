@@ -1,0 +1,20 @@
+{
+    "require": {
+        "symfony/dependency-injection": "^6.1",
+        "symplify/symplify-kernel": "^11.1",
+        "symfony/console": "^6.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "require-dev": {
+        "doctrine/coding-standard": "^10.0"
+    },
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    }
+}
